@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Hug</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="video-container">
+        <!-- Video call interface -->
+        <!-- Add video streams for participants -->
+    </div>
+
+    <button id="hug-button">Send Virtual Hug</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" integrity="sha384-2v+d/FAz0gKKib/3I/ewJVbDZzbdz17Cds9PRp1MUhVT09dPPxZozgAvxK1aBbSj" crossorigin="anonymous"></script>
+    <script>
+        const socket = io();
+
+        // Send virtual hug gesture data to backend
+        function sendHugGesture() {
+            const gestureData = {
+                hug_detected: true
+            };
+            socket.emit('hug_gesture', gestureData);
+        }
+
+        // Listen for virtual hug event from backend
+        socket.on('virtual_hug', function() {
+            // Trigger virtual hug animation here
+            console.log('Virtual hug received!');
+            // Add code to trigger animation or visual effect
+        });
+
+        // Attach click event listener to hug button
+        document.getElementById('hug-button').addEventListener('click', function() {
+            sendHugGesture();
+        });
+    </script>
+</body>
+</html>
