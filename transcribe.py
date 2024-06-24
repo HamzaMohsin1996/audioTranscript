@@ -15,9 +15,9 @@ except ModuleNotFoundError:
     print("pydub installed and imported successfully")
 
 # Convert .m4a to .wav
-audio_file = "voice3.m4a"  # Replace with your audio file path
-wav_file = "voice3.wav"
-text_file = "transcription3.txt"  # Output text file
+audio_file = "voice.m4a"  # Replace with your audio file path
+wav_file = "voice.wav"
+text_file = "transcription.txt"  # Output text file
 
 # Check if audio file exists
 if not os.path.exists(audio_file):
